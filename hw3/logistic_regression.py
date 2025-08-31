@@ -5,7 +5,7 @@ Implement logistic regression using gradient descent and maximum likelihood esti
 This is part of a larger assignment that also includes linear regression.
 
 Instructions:
-- Use functions from utilities.py for shared functionality  
+- Use functions from utilities.py for shared functionality
 - Implement gradient descent optimization (no analytical solution exists)
 - Focus on binary classification (0/1 labels)
 - Include proper probabilistic interpretation
