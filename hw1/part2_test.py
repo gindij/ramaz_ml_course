@@ -34,18 +34,29 @@ ASSIGNMENT_NAME = "HW1 Part 2: NumPy Essentials"
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Test NumPy Essentials implementations')
-    parser.add_argument('--file', '-f', default='part2_numpy_essentials',
-                       help='Python module to test (without .py extension)')
-    parser.add_argument('functions', nargs='*',
-                       help='Specific functions to test (test all if none specified)')
+    parser = argparse.ArgumentParser(
+        description="Test NumPy Essentials implementations"
+    )
+    parser.add_argument(
+        "--file",
+        "-f",
+        default="part2_numpy_essentials",
+        help="Python module to test (without .py extension)",
+    )
+    parser.add_argument(
+        "functions",
+        nargs="*",
+        help="Specific functions to test (test all if none specified)",
+    )
 
     args = parser.parse_args()
 
     test_cases_file = "part2_test_cases.json"
 
     if args.functions:
-        run_specific_functions(test_cases_file, args.file, args.functions, FUNCTION_POINTS)
+        run_specific_functions(
+            test_cases_file, args.file, args.functions, FUNCTION_POINTS
+        )
     else:
         run_tests(test_cases_file, args.file, FUNCTION_POINTS, ASSIGNMENT_NAME)
 

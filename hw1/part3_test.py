@@ -26,18 +26,29 @@ ASSIGNMENT_NAME = "HW1 Part 3: Advanced Problems"
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Test Advanced Problems implementations')
-    parser.add_argument('--file', '-f', default='part3_advanced_problems', 
-                       help='Python module to test (without .py extension)')
-    parser.add_argument('functions', nargs='*', 
-                       help='Specific functions to test (test all if none specified)')
-    
+    parser = argparse.ArgumentParser(
+        description="Test Advanced Problems implementations"
+    )
+    parser.add_argument(
+        "--file",
+        "-f",
+        default="part3_advanced_problems",
+        help="Python module to test (without .py extension)",
+    )
+    parser.add_argument(
+        "functions",
+        nargs="*",
+        help="Specific functions to test (test all if none specified)",
+    )
+
     args = parser.parse_args()
-    
+
     test_cases_file = "part3_test_cases.json"
-    
+
     if args.functions:
-        run_specific_functions(test_cases_file, args.file, args.functions, FUNCTION_POINTS)
+        run_specific_functions(
+            test_cases_file, args.file, args.functions, FUNCTION_POINTS
+        )
     else:
         run_tests(test_cases_file, args.file, FUNCTION_POINTS, ASSIGNMENT_NAME)
 

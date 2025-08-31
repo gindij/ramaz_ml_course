@@ -24,24 +24,27 @@ from typing import List
 # 3.1 Matrix Construction Problems
 # =============================================================================
 
-def create_permutation_matrix(ordering: List[int]) -> np.ndarray:  # [HARD] Hard - 3 points
+
+def create_permutation_matrix(
+    ordering: List[int],
+) -> np.ndarray:  # [HARD] Hard - 3 points
     """
     Create a permutation matrix from a given ordering.
-    
-    A permutation matrix is a square matrix with exactly one 1 in each row 
+
+    A permutation matrix is a square matrix with exactly one 1 in each row
     and column, and 0s elsewhere. It represents a reordering of rows/columns.
-    
+
     Args:
-        ordering: List of integers (1-indexed) indicating which row of the 
+        ordering: List of integers (1-indexed) indicating which row of the
                  identity matrix should appear in each position
-    
+
     Returns:
         np.ndarray: Square permutation matrix
-    
+
     Example:
         create_permutation_matrix([2, 1, 3]) creates:
         [[0, 1, 0],    (take row 2 of identity)
-         [1, 0, 0],    (take row 1 of identity)  
+         [1, 0, 0],    (take row 1 of identity)
          [0, 0, 1]]    (take row 3 of identity)
     """
     # TODO: Implement this function
@@ -52,34 +55,37 @@ def create_permutation_matrix(ordering: List[int]) -> np.ndarray:  # [HARD] Hard
 # 3.2 Numerical Linear Algebra
 # =============================================================================
 
-def back_substitution(U: np.ndarray, b: np.ndarray) -> np.ndarray:  # [HARD] Hard - 3 points
+
+def back_substitution(
+    U: np.ndarray, b: np.ndarray
+) -> np.ndarray:  # [HARD] Hard - 3 points
     """
     Solve upper triangular system Ux = b using back substitution.
-    
+
     Back substitution is a fundamental algorithm in numerical linear algebra.
     For an upper triangular matrix U, we can solve Ux = b by working backwards
     from the last equation to the first.
-    
+
     Args:
         U: Upper triangular matrix (n*n)
         b: Right-hand side vector (n*1)
-    
+
     Returns:
         np.ndarray: Solution vector x
-    
+
     Raises:
         ValueError: If matrix dimensions are incompatible or U has zeros on diagonal
-    
+
     Example:
         U = [[2, 1, 3],     b = [16]
-             [0, 1, 2],           [5]  
+             [0, 1, 2],           [5]
              [0, 0, 1]]           [1]
-        
+
         Working backwards:
         From equation 3: x₃ = 1
-        From equation 2: x₂ = 5 - 2(1) = 3  
+        From equation 2: x₂ = 5 - 2(1) = 3
         From equation 1: x₁ = (16 - 3(1) - 1(3))/2 = 5
-        
+
         Result: [5, 3, 1]
     """
     # TODO: Implement this function
@@ -92,16 +98,19 @@ def back_substitution(U: np.ndarray, b: np.ndarray) -> np.ndarray:  # [HARD] Har
 # 3.3 Geometric Transformations
 # =============================================================================
 
-def rotation_matrix_2d(angle_degrees: float) -> np.ndarray:  # [MEDIUM] Medium - 2 points
+
+def rotation_matrix_2d(
+    angle_degrees: float,
+) -> np.ndarray:  # [MEDIUM] Medium - 2 points
     """
     Create a 2D rotation matrix for rotating points counterclockwise.
-    
+
     Args:
         angle_degrees: Rotation angle in degrees (counterclockwise)
-    
+
     Returns:
         np.ndarray: 2*2 rotation matrix
-    
+
     Example:
         rotation_matrix_2d(90) creates a 90-degree rotation matrix:
         [[ 0, -1],
@@ -116,14 +125,14 @@ def rotation_matrix_2d(angle_degrees: float) -> np.ndarray:  # [MEDIUM] Medium -
 def scaling_matrix_2d(sx: float, sy: float) -> np.ndarray:  # [EASY] Easy - 1 point
     """
     Create a 2D scaling matrix.
-    
+
     Args:
         sx: Scale factor for x-direction
         sy: Scale factor for y-direction
-    
+
     Returns:
         np.ndarray: 2*2 scaling matrix
-    
+
     Example:
         scaling_matrix_2d(2, 3) creates:
         [[2, 0],
@@ -133,20 +142,22 @@ def scaling_matrix_2d(sx: float, sy: float) -> np.ndarray:  # [EASY] Easy - 1 po
     pass
 
 
-def translation_matrix_2d(tx: float, ty: float) -> np.ndarray:  # [MEDIUM] Medium - 2 points
+def translation_matrix_2d(
+    tx: float, ty: float
+) -> np.ndarray:  # [MEDIUM] Medium - 2 points
     """
     Create a 2D translation matrix using homogeneous coordinates.
-    
-    Translation cannot be represented as a 2*2 matrix, so we use 3*3 
+
+    Translation cannot be represented as a 2*2 matrix, so we use 3*3
     homogeneous coordinates where points become [x, y, 1].
-    
+
     Args:
         tx: Translation distance in x-direction
         ty: Translation distance in y-direction
-    
+
     Returns:
         np.ndarray: 3*3 translation matrix
-    
+
     Example:
         translation_matrix_2d(5, -2) creates:
         [[1, 0,  5],
@@ -160,19 +171,19 @@ def translation_matrix_2d(tx: float, ty: float) -> np.ndarray:  # [MEDIUM] Mediu
 def complex_transformation_challenge() -> np.ndarray:  # [HARD] Hard - 3 points
     """
     Create a complex transformation by composing scaling, rotation, and translation.
-    
+
     Apply the following transformations to a unit square with vertices at
     (0,0), (1,0), (1,1), (0,1), (0,0):
-    
+
     1. Scale by factors (2, 0.5)
     2. Rotate by 30 degrees counterclockwise
     3. Translate by (3, 2)
-    
+
     The transformations should be applied in the order listed above.
-    
+
     Returns:
         np.ndarray: Array of transformed vertices (5*2, including the closing vertex)
-    
+
     Note: This problem tests your understanding of:
     - Matrix composition and order of operations
     - Coordinate transformations
