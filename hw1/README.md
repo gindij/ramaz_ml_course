@@ -23,7 +23,7 @@ A comprehensive assignment for high school seniors to learn linear algebra throu
 
 3. **Verify your setup:**
    ```bash
-   python part1_test.py
+   python test.py --part 1
    ```
    You should see test results showing 0 points (since functions aren't implemented yet).
 
@@ -32,7 +32,7 @@ A comprehensive assignment for high school seniors to learn linear algebra throu
 1. **Open the assignment files in your favorite editor**
 2. **Start with Part 1** (`part1_from_scratch.py`)
 3. **Implement the functions** by replacing `pass` with your code
-4. **Test your progress** regularly with `python part1_test.py`
+4. **Test your progress** regularly with `python test.py --part 1`
 
 ## Assignment Structure
 
@@ -106,17 +106,26 @@ Challenging problems requiring mathematical thinking:
 
 ## Testing Your Work
 
-Each part has its own testing system:
+Use the unified test script to test any part or combination:
 
 ```bash
-# Test individual parts
-python part1_test.py
-python part2_test.py
-python part3_test.py
+# Test all parts
+python test.py
 
-# Test specific functions within a part
-python part1_test.py vector_add dot_product
-python part2_test.py create_zeros_array normalize_features
+# Test individual parts
+python test.py --part 1
+python test.py --part 2
+python test.py --part 3
+
+# Test specific functions (auto-detects which part they belong to)
+python test.py vector_add dot_product
+python test.py create_zeros_array normalize_features
+
+# Test specific functions in a specific part
+python test.py --part 1 vector_add dot_product
+
+# Test a different file (e.g., reference solution)
+python test.py --file part1_solution --part 1
 ```
 
 ### Understanding Test Output
@@ -170,14 +179,12 @@ PASSING FINAL SCORE: 4/25 points (16.0%) - KEEP WORKING
 ```
 hw1/
 ├── README.md                          # This file
+├── test.py                            # Unified test runner for all parts
 ├── part1_from_scratch.py              # Part 1: Implement from scratch (25 pts)
-├── part1_test.py                      # Part 1 test runner
 ├── part1_test_cases.json              # Part 1 test cases
 ├── part2_numpy_essentials.py          # Part 2: Learn NumPy (37 pts)
-├── part2_test.py                      # Part 2 test runner
 ├── part2_test_cases.json              # Part 2 test cases
 ├── part3_advanced_problems.py         # Part 3: Advanced problems (21 pts)
-├── part3_test.py                      # Part 3 test runner
 └── part3_test_cases.json              # Part 3 test cases
 ```
 
@@ -234,7 +241,7 @@ pip install numpy
 ```bash
 # Make sure you're in the right directory
 cd ramaz_ml_course_2025/hw1
-python part1_test.py
+python test.py --part 1
 ```
 
 **Functions Returning None:**

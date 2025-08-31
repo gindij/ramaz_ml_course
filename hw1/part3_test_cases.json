@@ -8,7 +8,31 @@
           2
         ]
       ],
-      "expected_output": "[[0. 0. 1.]\n [1. 0. 0.]\n [0. 1. 0.]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
@@ -18,7 +42,31 @@
           2
         ]
       ],
-      "expected_output": "[[1. 0. 0.]\n [0. 0. 1.]\n [0. 1. 0.]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
@@ -28,7 +76,31 @@
           0
         ]
       ],
-      "expected_output": "[[0. 1. 0.]\n [1. 0. 0.]\n [0. 0. 1.]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
@@ -38,7 +110,31 @@
           0
         ]
       ],
-      "expected_output": "[[1. 0. 0.]\n [0. 1. 0.]\n [0. 0. 1.]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
@@ -48,37 +144,220 @@
           1
         ]
       ],
-      "expected_output": "[[0. 0. 1.]\n [0. 1. 0.]\n [1. 0. 0.]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     }
   ],
   "back_substitution": [
     {
       "input": [
-        "[[1 2 3]\n [0 1 4]\n [0 0 1]]",
-        "[6 5 1]"
+        {
+          "__numpy_array__": true,
+          "data": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "dtype": "int64",
+          "shape": [
+            3,
+            3
+          ]
+        },
+        {
+          "__numpy_array__": true,
+          "data": [
+            6,
+            5,
+            1
+          ],
+          "dtype": "int64",
+          "shape": [
+            3
+          ]
+        }
       ],
-      "expected_output": "[1. 1. 1.]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "dtype": "float64",
+        "shape": [
+          3
+        ]
+      }
     },
     {
       "input": [
-        "[[2 1]\n [0 3]]",
-        "[3 6]"
+        {
+          "__numpy_array__": true,
+          "data": [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "dtype": "int64",
+          "shape": [
+            2,
+            2
+          ]
+        },
+        {
+          "__numpy_array__": true,
+          "data": [
+            3,
+            6
+          ],
+          "dtype": "int64",
+          "shape": [
+            2
+          ]
+        }
       ],
-      "expected_output": "[0.5 2. ]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          0.5,
+          2.0
+        ],
+        "dtype": "float64",
+        "shape": [
+          2
+        ]
+      }
     },
     {
       "input": [
-        "[[1]]",
-        "[5]"
+        {
+          "__numpy_array__": true,
+          "data": [
+            [
+              1
+            ]
+          ],
+          "dtype": "int64",
+          "shape": [
+            1,
+            1
+          ]
+        },
+        {
+          "__numpy_array__": true,
+          "data": [
+            5
+          ],
+          "dtype": "int64",
+          "shape": [
+            1
+          ]
+        }
       ],
-      "expected_output": "[5.]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          5.0
+        ],
+        "dtype": "float64",
+        "shape": [
+          1
+        ]
+      }
     },
     {
       "input": [
-        "[[1 2 3]\n [0 4 5]\n [0 0 6]]",
-        "[14 22 12]"
+        {
+          "__numpy_array__": true,
+          "data": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ],
+          "dtype": "int64",
+          "shape": [
+            3,
+            3
+          ]
+        },
+        {
+          "__numpy_array__": true,
+          "data": [
+            14,
+            22,
+            12
+          ],
+          "dtype": "int64",
+          "shape": [
+            3
+          ]
+        }
       ],
-      "expected_output": "[2. 3. 2.]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          2.0,
+          3.0,
+          2.0
+        ],
+        "dtype": "float64",
+        "shape": [
+          3
+        ]
+      }
     }
   ],
   "rotation_matrix_2d": [
@@ -86,37 +365,139 @@
       "input": [
         0
       ],
-      "expected_output": "[[ 1. -0.]\n [ 0.  1.]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1.0,
+            -0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         90
       ],
-      "expected_output": "[[ 6.123234e-17 -1.000000e+00]\n [ 1.000000e+00  6.123234e-17]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            6.123233995736766e-17,
+            -1.0
+          ],
+          [
+            1.0,
+            6.123233995736766e-17
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         180
       ],
-      "expected_output": "[[-1.0000000e+00 -1.2246468e-16]\n [ 1.2246468e-16 -1.0000000e+00]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            -1.0,
+            -1.2246467991473532e-16
+          ],
+          [
+            1.2246467991473532e-16,
+            -1.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         270
       ],
-      "expected_output": "[[-1.8369702e-16  1.0000000e+00]\n [-1.0000000e+00 -1.8369702e-16]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            -1.8369701987210297e-16,
+            1.0
+          ],
+          [
+            -1.0,
+            -1.8369701987210297e-16
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         45
       ],
-      "expected_output": "[[ 0.70710678 -0.70710678]\n [ 0.70710678  0.70710678]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865476
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         -90
       ],
-      "expected_output": "[[ 6.123234e-17  1.000000e+00]\n [-1.000000e+00  6.123234e-17]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            6.123233995736766e-17,
+            1.0
+          ],
+          [
+            -1.0,
+            6.123233995736766e-17
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     }
   ],
   "scaling_matrix_2d": [
@@ -125,42 +506,144 @@
         1,
         1
       ],
-      "expected_output": "[[1 0]\n [0 1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         2,
         2
       ],
-      "expected_output": "[[2 0]\n [0 2]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         2,
         3
       ],
-      "expected_output": "[[2 0]\n [0 3]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         0.5,
         0.5
       ],
-      "expected_output": "[[0.5 0. ]\n [0.  0.5]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.5
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         1,
         -1
       ],
-      "expected_output": "[[ 1  0]\n [ 0 -1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     },
     {
       "input": [
         -1,
         1
       ],
-      "expected_output": "[[-1  0]\n [ 0  1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          2,
+          2
+        ]
+      }
     }
   ],
   "translation_matrix_2d": [
@@ -169,41 +652,190 @@
         0,
         0
       ],
-      "expected_output": "[[1 0 0]\n [0 1 0]\n [0 0 1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
         1,
         2
       ],
-      "expected_output": "[[1 0 1]\n [0 1 2]\n [0 0 1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
         -1,
         -2
       ],
-      "expected_output": "[[ 1  0 -1]\n [ 0  1 -2]\n [ 0  0  1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1,
+            0,
+            -1
+          ],
+          [
+            0,
+            1,
+            -2
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
         0.5,
         1.5
       ],
-      "expected_output": "[[1.  0.  0.5]\n [0.  1.  1.5]\n [0.  0.  1. ]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1.0,
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            1.0,
+            1.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     },
     {
       "input": [
         10,
         -5
       ],
-      "expected_output": "[[ 1  0 10]\n [ 0  1 -5]\n [ 0  0  1]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            1,
+            0,
+            10
+          ],
+          [
+            0,
+            1,
+            -5
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "dtype": "int64",
+        "shape": [
+          3,
+          3
+        ]
+      }
     }
   ],
   "complex_transformation_challenge": [
     {
       "input": [],
-      "expected_output": "[[3.         2.        ]\n [4.73205081 3.        ]\n [4.48205081 3.4330127 ]\n [2.75       2.4330127 ]\n [3.         2.        ]]"
+      "expected_output": {
+        "__numpy_array__": true,
+        "data": [
+          [
+            3.0,
+            2.0
+          ],
+          [
+            4.732050807568878,
+            3.0
+          ],
+          [
+            4.482050807568878,
+            3.433012701892219
+          ],
+          [
+            2.75,
+            2.433012701892219
+          ],
+          [
+            3.0,
+            2.0
+          ]
+        ],
+        "dtype": "float64",
+        "shape": [
+          5,
+          2
+        ]
+      }
     }
   ]
 }
