@@ -60,12 +60,12 @@ Master the essential shared functionality:
 
 Implement linear regression through gradient descent:
 - **compute_cost** [2 pts]: Mean squared error cost function
-- **linear_gradient** [4 pts]: ∂J/∂θ = (1/m) * X^T * (X*θ - y)
+- **linear_gradient** [4 pts]: dJ/dtheta = (1/m) * X^T * (X*theta - y)
 - **linear_gradient_descent** [3 pts]: Train using gradient descent
 - **predict** [4 pts]: Make predictions using learned parameters
 - **polynomial_features** [3 pts]: Generate polynomial basis functions
 - **fit_polynomial_regression** [3 pts]: Polynomial regression via gradient descent
-- **r_squared** [2 pts]: Coefficient of determination (R²)
+- **r_squared** [2 pts]: Coefficient of determination (R-squared)
 - **cross_validate_linear_regression** [1 pt]: K-fold cross-validation
 
 *Key Learning: Gradient descent is the fundamental optimization algorithm in machine learning.*
@@ -74,11 +74,11 @@ Implement linear regression through gradient descent:
 **File: `logistic_regression.py` | Functions: 9 | Duration: ~6 hours**
 
 Implement binary classification through gradient descent:
-- **sigmoid** [2 pts]: σ(z) = 1/(1 + e^(-z)) activation function
-- **sigmoid_derivative** [2 pts]: σ'(z) = σ(z)(1 - σ(z))
+- **sigmoid** [2 pts]: sigmoid(z) = 1/(1 + e^(-z)) activation function
+- **sigmoid_derivative** [2 pts]: sigmoid'(z) = sigmoid(z)(1 - sigmoid(z))
 - **compute_logistic_cost** [3 pts]: Cross-entropy loss function
 - **logistic_cost_from_predictions** [2 pts]: Cost wrapper for gradient descent
-- **logistic_gradient** [5 pts]: ∂J/∂θ = (1/m) * X^T * (σ(X*θ) - y)
+- **logistic_gradient** [5 pts]: dJ/dtheta = (1/m) * X^T * (sigmoid(X*theta) - y)
 - **logistic_gradient_descent** [3 pts]: Train using gradient descent
 - **predict_proba** [4 pts]: Predict class probabilities
 - **predict_classes** [3 pts]: Predict binary classes with threshold
@@ -92,16 +92,16 @@ Implement binary classification through gradient descent:
 Gradient descent is the fundamental algorithm that powers machine learning:
 
 #### Linear Regression Mathematics
-1. **Cost Function**: J(θ) = (1/2m) Σ(h_θ(x^i) - y^i)² where h_θ(x) = θ^T x
-2. **Gradient**: ∇J(θ) = (1/m) X^T(Xθ - y)
-3. **Parameter Update**: θ = θ - α ∇J(θ)
+1. **Cost Function**: J(theta) = (1/2m) * sum(h_theta(x^i) - y^i)^2 where h_theta(x) = theta^T x
+2. **Gradient**: gradient_J(theta) = (1/m) X^T(X*theta - y)
+3. **Parameter Update**: theta = theta - alpha * gradient_J(theta)
 4. **Repeat until convergence**
 
 #### Logistic Regression Mathematics
-1. **Hypothesis**: h_θ(x) = σ(θ^T x) = 1/(1 + e^(-θ^T x))
-2. **Cost Function**: J(θ) = -(1/m) Σ[y^i log(h_θ(x^i)) + (1-y^i) log(1-h_θ(x^i))]
-3. **Gradient**: ∇J(θ) = (1/m) X^T(σ(Xθ) - y)
-4. **Parameter Update**: θ = θ - α ∇J(θ)
+1. **Hypothesis**: h_theta(x) = sigmoid(theta^T x) = 1/(1 + e^(-theta^T x))
+2. **Cost Function**: J(theta) = -(1/m) * sum[y^i log(h_theta(x^i)) + (1-y^i) log(1-h_theta(x^i))]
+3. **Gradient**: gradient_J(theta) = (1/m) X^T(sigmoid(X*theta) - y)
+4. **Parameter Update**: theta = theta - alpha * gradient_J(theta)
 
 ### Key Advantages of Gradient Descent
 - **Scales to large datasets** (unlike analytical solutions)
@@ -211,7 +211,7 @@ hw3/
 ├── logistic_regression.py             # Logistic regression (30 points)
 ├── test.py                           # Test runner
 ├── test_cases.json                   # Test cases (auto-generated)
-└── answers.txt                       # Conceptual questions
+└── answers.md                        # Conceptual questions
 ```
 
 ## Learning Objectives
