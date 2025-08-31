@@ -65,7 +65,7 @@ PART3_FUNCTION_POINTS = {
 ALL_FUNCTION_POINTS = {
     **PART1_FUNCTION_POINTS,
     **PART2_FUNCTION_POINTS,
-    **PART3_FUNCTION_POINTS
+    **PART3_FUNCTION_POINTS,
 }
 
 PART_CONFIG = {
@@ -73,20 +73,20 @@ PART_CONFIG = {
         "functions": PART1_FUNCTION_POINTS,
         "test_cases": "part1_test_cases.json",
         "default_file": "part1_from_scratch",
-        "name": "HW1 Part 1: Linear Algebra from Scratch"
+        "name": "HW1 Part 1: Linear Algebra from Scratch",
     },
     2: {
         "functions": PART2_FUNCTION_POINTS,
         "test_cases": "part2_test_cases.json",
         "default_file": "part2_numpy_essentials",
-        "name": "HW1 Part 2: NumPy Essentials"
+        "name": "HW1 Part 2: NumPy Essentials",
     },
     3: {
         "functions": PART3_FUNCTION_POINTS,
         "test_cases": "part3_test_cases.json",
         "default_file": "part3_advanced_problems",
-        "name": "HW1 Part 3: Advanced Problems"
-    }
+        "name": "HW1 Part 3: Advanced Problems",
+    },
 }
 
 
@@ -102,27 +102,19 @@ def detect_part_from_functions(functions):
 def run_part(part_num, file_name=None, specific_functions=None):
     """Run tests for a specific part."""
     config = PART_CONFIG[part_num]
-    
+
     if file_name is None:
         file_name = config["default_file"]
-    
+
     if specific_functions:
         # Filter functions that belong to this part
         part_functions = [f for f in specific_functions if f in config["functions"]]
         if part_functions:
             run_specific_functions(
-                config["test_cases"], 
-                file_name, 
-                part_functions, 
-                config["functions"]
+                config["test_cases"], file_name, part_functions, config["functions"]
             )
     else:
-        run_tests(
-            config["test_cases"], 
-            file_name, 
-            config["functions"], 
-            config["name"]
-        )
+        run_tests(config["test_cases"], file_name, config["functions"], config["name"])
 
 
 def main():
@@ -134,17 +126,17 @@ def main():
         "-p",
         type=int,
         choices=[1, 2, 3],
-        help="Which part to test (1, 2, or 3). If not specified, test all parts."
+        help="Which part to test (1, 2, or 3). If not specified, test all parts.",
     )
     parser.add_argument(
         "--file",
         "-f",
-        help="Python module to test (without .py extension). If not specified, uses default file for each part."
+        help="Python module to test (without .py extension). If not specified, uses default file for each part.",
     )
     parser.add_argument(
         "functions",
         nargs="*",
-        help="Specific functions to test. If not specified, test all functions."
+        help="Specific functions to test. If not specified, test all functions.",
     )
 
     args = parser.parse_args()
@@ -160,7 +152,7 @@ def main():
             if not parts:
                 print(f"Error: No functions found matching: {args.functions}")
                 sys.exit(1)
-            
+
             for part_num in sorted(parts):
                 run_part(part_num, args.file, args.functions)
     elif args.part:
