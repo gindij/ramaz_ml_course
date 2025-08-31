@@ -72,7 +72,7 @@ Q5. Voting Mechanisms
 STRENGTHS AND WEAKNESSES
 =============================================================================
 
-Q8. When K-NN Works Well
+Q6. When K-NN Works Well
    List three characteristics of datasets/problems where K-NN tends to perform well.
 
    Answer:
@@ -81,13 +81,13 @@ Q8. When K-NN Works Well
    3.
 
 
-Q9. When K-NN Struggles
+Q7. When K-NN Struggles
    a) Explain why K-NN often performs poorly in high-dimensional spaces (hint: "curse of dimensionality").
 
    Answer:
 
 
-Q10. Application Scenarios
+Q8. Application Scenarios
     For each scenario, explain whether K-NN would be appropriate and why:
 
     a) Recommending movies to users based on their past ratings
@@ -109,19 +109,16 @@ Q10. Application Scenarios
 REFLECTION QUESTIONS
 =============================================================================
 
-Q13. Implementation Insights
+Q9. Implementation Insights
     What was the most challenging part of implementing K-NN, and what did you learn from it?
 
     Answer:
 
 
-Q14. Conceptual Understanding
+Q10. Conceptual Understanding
     After implementing K-NN from scratch, how has your understanding of the algorithm changed compared to before the assignment?
 
     Answer:
 
-
-Q15. Machine Learning Connections
-    How does K-NN compare to other machine learning algorithms you know? What makes it unique?
-
-    Answer:
+Q11. Difficulty
+     Is there anything about this assignment you would change?
