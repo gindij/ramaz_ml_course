@@ -8,14 +8,38 @@ import json
 import sys
 import importlib
 import traceback
+import numpy as np
 from typing import Dict, List, Any, Optional, Tuple
+
+
+def deserialize_from_json(obj):
+    """Convert JSON-serialized objects back to their original types."""
+    if isinstance(obj, dict):
+        if "__numpy_array__" in obj:
+            # Reconstruct numpy array
+            return np.array(obj["data"], dtype=obj["dtype"]).reshape(obj["shape"])
+        elif "__slice__" in obj:
+            # Reconstruct slice object
+            return slice(obj["start"], obj["stop"], obj["step"])
+        elif "__tuple__" in obj:
+            # Reconstruct tuple
+            return tuple(deserialize_from_json(item) for item in obj["data"])
+        else:
+            # Regular dict - recursively deserialize values
+            return {key: deserialize_from_json(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [deserialize_from_json(item) for item in obj]
+    else:
+        return obj
 
 
 def load_test_cases(test_cases_file: str) -> Dict[str, List[Dict]]:
     """Load test cases from JSON file."""
     try:
         with open(test_cases_file, "r") as f:
-            return json.load(f)
+            raw_data = json.load(f)
+            # Deserialize all test cases
+            return deserialize_from_json(raw_data)
     except FileNotFoundError:
         print(f"Error: {test_cases_file} not found.")
         print("Run the test case generator first.")
@@ -56,6 +80,37 @@ def safe_call_function(
 
 def compare_results(expected: Any, actual: Any, tolerance: float = 1e-6) -> bool:
     """Compare expected and actual results with tolerance for floating point."""
+    # Handle NumPy arrays
+    if isinstance(expected, np.ndarray) or isinstance(actual, np.ndarray):
+        try:
+            # Convert both to numpy arrays if they aren't already
+            expected_arr = np.asarray(expected)
+            actual_arr = np.asarray(actual)
+            
+            # Check shapes match
+            if expected_arr.shape != actual_arr.shape:
+                return False
+                
+            # Handle NaN values specially
+            if np.any(np.isnan(expected_arr)) or np.any(np.isnan(actual_arr)):
+                # Both should have NaN in same positions
+                expected_nan_mask = np.isnan(expected_arr)
+                actual_nan_mask = np.isnan(actual_arr)
+                if not np.array_equal(expected_nan_mask, actual_nan_mask):
+                    return False
+                # Compare non-NaN values
+                non_nan_mask = ~expected_nan_mask
+                if np.any(non_nan_mask):
+                    return np.allclose(expected_arr[non_nan_mask], actual_arr[non_nan_mask], 
+                                     rtol=tolerance, atol=tolerance)
+                return True
+            else:
+                # Regular comparison with tolerance
+                return np.allclose(expected_arr, actual_arr, rtol=tolerance, atol=tolerance)
+        except (ValueError, TypeError):
+            # Fall back to regular comparison if numpy comparison fails
+            pass
+    
     if isinstance(expected, float) and isinstance(actual, (int, float)):
         return abs(expected - actual) < tolerance
     elif isinstance(expected, list) and isinstance(actual, list):
@@ -72,7 +127,14 @@ def compare_results(expected: Any, actual: Any, tolerance: float = 1e-6) -> bool
     elif isinstance(expected, list) and isinstance(actual, tuple):
         return compare_results(tuple(expected), actual, tolerance)
     else:
-        return expected == actual
+        try:
+            return expected == actual
+        except ValueError:
+            # This can happen with numpy arrays, fall back to element-wise comparison
+            try:
+                return np.array_equal(expected, actual)
+            except:
+                return False
 
 
 def run_function_tests(

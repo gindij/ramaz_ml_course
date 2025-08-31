@@ -5,16 +5,53 @@ Takes test inputs and a reference implementation, generates JSON test cases.
 """
 
 import json
+import numpy as np
 from typing import Dict, List, Any, Callable
+
+
+def serialize_for_json(obj):
+    """Convert objects to JSON-serializable format."""
+    if isinstance(obj, np.ndarray):
+        return {
+            "__numpy_array__": True,
+            "data": obj.tolist(),
+            "dtype": str(obj.dtype),
+            "shape": obj.shape
+        }
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, slice):
+        return {
+            "__slice__": True,
+            "start": obj.start,
+            "stop": obj.stop,
+            "step": obj.step
+        }
+    elif isinstance(obj, list):
+        return [serialize_for_json(item) for item in obj]
+    elif isinstance(obj, tuple):
+        return {"__tuple__": True, "data": [serialize_for_json(item) for item in obj]}
+    elif isinstance(obj, dict):
+        return {key: serialize_for_json(value) for key, value in obj.items()}
+    else:
+        return obj
 
 
 def safe_call_function(func: Callable, inputs: List[Any]) -> Dict[str, Any]:
     """Safely call a function and return result or expected error."""
     try:
         result = func(*inputs)
-        return {"input": inputs, "expected_output": result}
+        return {
+            "input": serialize_for_json(inputs), 
+            "expected_output": serialize_for_json(result)
+        }
     except Exception as e:
-        return {"input": inputs, "expected_error": str(e)}
+        return {
+            "input": serialize_for_json(inputs), 
+            "expected_error": str(e)
+        }
 
 
 def generate_test_cases(
@@ -54,7 +91,7 @@ def generate_test_cases(
 
     # Save to JSON file
     with open(output_file, "w") as f:
-        json.dump(test_cases, f, indent=2, default=str)
+        json.dump(test_cases, f, indent=2)
 
     print(f"Generated {total_cases} total test cases for {len(test_cases)} functions")
     print(f"Test cases saved to {output_file}")
