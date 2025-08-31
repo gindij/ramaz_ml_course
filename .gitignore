@@ -1,18 +1,46 @@
-# Solution files - Do not commit these!
-*_solution.py
-*solutions.py
-*_solutions.py
-*_reference.py
-*reference*.py
+# Test input configuration files (instructor-only)
+# These define what to test but aren't needed by students
+*solution.py
+*generate_tests.py
+*test_inputs.py
+test_inputs.py
 
-# Test case generator - contains solutions
-generate_test_cases.py
-
-# Python cache
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
 
 # Distribution / packaging
 .Python
@@ -32,10 +60,6 @@ wheels/
 .installed.cfg
 *.egg
 
-# PyInstaller
-*.manifest
-*.spec
-
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -53,39 +77,3 @@ coverage.xml
 
 # pyenv
 .python-version
-
-# Environment variables
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Linux
-*~
-
-# Temporary files
-*.tmp
-*.temp
-temp/
-tmp/
