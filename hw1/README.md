@@ -1,6 +1,6 @@
 # Linear Algebra Programming Assignment
 
-A comprehensive assignment for high school seniors to learn linear algebra through programming, progressing from basic concepts to advanced mathematical problems.
+This assignment will help you get familiar with linear algebra. In the first part, you will implement some basic linear algebra from scratch. In the second part, you will get familiar for numpy, a very popular numerical computing python library. In the third part, you will do some more challenging exercises to test your understanding.
 
 ## Getting Started
 
