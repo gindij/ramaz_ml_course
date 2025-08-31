@@ -86,11 +86,11 @@ def compare_results(expected: Any, actual: Any, tolerance: float = 1e-6) -> bool
             # Convert both to numpy arrays if they aren't already
             expected_arr = np.asarray(expected)
             actual_arr = np.asarray(actual)
-            
+
             # Check shapes match
             if expected_arr.shape != actual_arr.shape:
                 return False
-                
+
             # Handle NaN values specially
             if np.any(np.isnan(expected_arr)) or np.any(np.isnan(actual_arr)):
                 # Both should have NaN in same positions
@@ -101,16 +101,22 @@ def compare_results(expected: Any, actual: Any, tolerance: float = 1e-6) -> bool
                 # Compare non-NaN values
                 non_nan_mask = ~expected_nan_mask
                 if np.any(non_nan_mask):
-                    return np.allclose(expected_arr[non_nan_mask], actual_arr[non_nan_mask], 
-                                     rtol=tolerance, atol=tolerance)
+                    return np.allclose(
+                        expected_arr[non_nan_mask],
+                        actual_arr[non_nan_mask],
+                        rtol=tolerance,
+                        atol=tolerance,
+                    )
                 return True
             else:
                 # Regular comparison with tolerance
-                return np.allclose(expected_arr, actual_arr, rtol=tolerance, atol=tolerance)
+                return np.allclose(
+                    expected_arr, actual_arr, rtol=tolerance, atol=tolerance
+                )
         except (ValueError, TypeError):
             # Fall back to regular comparison if numpy comparison fails
             pass
-    
+
     if isinstance(expected, float) and isinstance(actual, (int, float)):
         return abs(expected - actual) < tolerance
     elif isinstance(expected, list) and isinstance(actual, list):

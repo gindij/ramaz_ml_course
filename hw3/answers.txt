@@ -1,0 +1,156 @@
+HW3: Linear Regression - Conceptual Questions
+==============================================
+
+Name: [Your Name Here]
+
+Instructions: Answer each question thoughtfully in 2-4 sentences. Focus on demonstrating your understanding of the mathematical concepts and practical implications. Some questions may require research or deeper thinking beyond the basic implementation.
+
+=============================================================================
+MATHEMATICAL FOUNDATIONS
+=============================================================================
+
+Q1. Normal Equation vs Gradient Descent
+   a) Explain the key mathematical difference between the normal equation and gradient descent approaches to solving linear regression.
+
+   Answer:
+
+
+   b) Why can we use the normal equation for linear regression but not for logistic regression or neural networks?
+
+   Answer:
+
+
+Q2. Matrix Operations
+   a) In the normal equation θ = (X^T X)^(-1) X^T y, what happens if X^T X is not invertible? Give a practical example when this might occur.
+
+   Answer:
+
+
+   b) Explain why we need to add an intercept term (bias) to our feature matrix, and how this affects the normal equation.
+
+   Answer:
+
+
+=============================================================================
+FEATURE ENGINEERING
+=============================================================================
+
+Q3. Polynomial Features
+   a) How does adding polynomial features change the fundamental nature of our linear regression model? Is it still "linear"?
+
+   Answer:
+
+
+   b) What is the main risk of using high-degree polynomial features, and how might you detect this problem?
+
+   Answer:
+
+
+Q4. Feature Scaling
+   a) Why is standardizing features often crucial when using polynomial features, but less critical for simple linear regression?
+
+   Answer:
+
+
+   b) Give an example of a real-world dataset where you would definitely need to standardize features before applying linear regression.
+
+   Answer:
+
+
+=============================================================================
+MODEL EVALUATION
+=============================================================================
+
+Q5. R-squared Interpretation
+   a) What does an R² value of 0.85 tell you about your model? What about R² = 0.0 or R² = -0.5?
+
+   Answer:
+
+
+   b) Can R² ever be greater than 1? Explain why or why not.
+
+   Answer:
+
+
+Q6. Cross-Validation
+   a) Why might a model that achieves perfect R² = 1.0 on training data perform poorly on test data?
+
+   Answer:
+
+
+   b) In k-fold cross-validation, how do you choose the value of k, and what are the trade-offs?
+
+   Answer:
+
+
+=============================================================================
+PRACTICAL APPLICATIONS
+=============================================================================
+
+Q7. When Linear Regression Works Well
+   List three characteristics of real-world problems where linear regression would be a good choice, and explain why for each.
+
+   Answer:
+   1.
+   2.
+   3.
+
+
+Q8. Limitations of Linear Regression
+    For each scenario, explain why standard linear regression would struggle and what you might do instead:
+
+    a) Predicting house prices where the relationship between square footage and price is exponential
+
+    Answer:
+
+
+    b) Classifying emails as spam or not spam
+
+    Answer:
+
+
+    c) Predicting stock prices based on historical data
+
+    Answer:
+
+
+=============================================================================
+ADVANCED CONCEPTS
+=============================================================================
+
+Q9. Assumptions of Linear Regression
+    a) What are the key assumptions underlying linear regression, and what happens when they're violated?
+
+    Answer:
+
+
+    b) How can you check whether these assumptions hold for your data?
+
+    Answer:
+
+
+Q10. Relationship to Other Methods
+    a) How is linear regression related to Principal Component Analysis (PCA)?
+
+    Answer:
+
+
+    b) Explain how linear regression is a special case of the more general framework of Generalized Linear Models (GLMs).
+
+    Answer:
+
+
+=============================================================================
+REFLECTION QUESTIONS
+=============================================================================
+
+Q11. Implementation Insights
+    What was the most challenging part of implementing linear regression from scratch, and how did it deepen your understanding of the algorithm?
+
+    Answer:
+
+
+Q12. Practical Considerations
+    What about this assignment would you change?
+
+    Answer:

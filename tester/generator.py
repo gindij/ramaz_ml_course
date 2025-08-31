@@ -16,7 +16,7 @@ def serialize_for_json(obj):
             "__numpy_array__": True,
             "data": obj.tolist(),
             "dtype": str(obj.dtype),
-            "shape": obj.shape
+            "shape": obj.shape,
         }
     elif isinstance(obj, np.integer):
         return int(obj)
@@ -27,7 +27,7 @@ def serialize_for_json(obj):
             "__slice__": True,
             "start": obj.start,
             "stop": obj.stop,
-            "step": obj.step
+            "step": obj.step,
         }
     elif isinstance(obj, list):
         return [serialize_for_json(item) for item in obj]
@@ -44,14 +44,11 @@ def safe_call_function(func: Callable, inputs: List[Any]) -> Dict[str, Any]:
     try:
         result = func(*inputs)
         return {
-            "input": serialize_for_json(inputs), 
-            "expected_output": serialize_for_json(result)
+            "input": serialize_for_json(inputs),
+            "expected_output": serialize_for_json(result),
         }
     except Exception as e:
-        return {
-            "input": serialize_for_json(inputs), 
-            "expected_error": str(e)
-        }
+        return {"input": serialize_for_json(inputs), "expected_error": str(e)}
 
 
 def generate_test_cases(
