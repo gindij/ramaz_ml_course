@@ -1,6 +1,6 @@
 # Linear Algebra Programming Assignment
 
-A comprehensive assignment for high school seniors to learn linear algebra through programming, progressing from basic concepts to advanced mathematical problems.
+This assignment will help you get familiar with linear algebra from both math and programming perspectives. In the first part, you will implement some basic linear algebra from scratch. In the second part, you will get familiar for numpy, a very popular numerical computing python library. In the third part, you will do some more challenging exercises to test your understanding.
 
 ## Getting Started
 
@@ -160,19 +160,11 @@ PASSING FINAL SCORE: 4/25 points (16.0%) - KEEP WORKING
 ============================================================
 ```
 
-## How to Work on the Assignment
-
-1. **Start with Part 1** - Build conceptual understanding by implementing operations from scratch
-2. **Move to Part 2** - Learn efficient NumPy operations
-3. **Challenge yourself with Part 3** - Solve advanced problems requiring research and mathematical thinking
-
 ### Implementation Tips
 
 - **Read the docstrings carefully** - they contain examples and explanations
 - **Test frequently** - run tests after implementing each function
-- **Don't skip Part 1** - conceptual understanding is crucial
 - **Research when stuck** - Part 3 problems may require looking up concepts
-- **Use the examples** - every function has usage examples in the docstrings
 
 ## File Structure
 
@@ -188,16 +180,6 @@ hw1/
 └── part3_test_cases.json              # Part 3 test cases
 ```
 
-## Learning Objectives
-
-By completing this assignment, students will:
-
-1. **Understand linear algebra conceptually** through from-scratch implementation
-2. **Master NumPy** for efficient numerical computing
-3. **Develop problem-solving skills** with advanced mathematical challenges
-4. **Learn practical applications** like geometric transformations
-5. **Build foundation skills** for future work in data science, computer graphics, and engineering
-
 ## Key Mathematical Concepts Covered
 
 - **Vectors**: Addition, scalar multiplication, dot product, magnitude, normalization
@@ -210,8 +192,6 @@ By completing this assignment, students will:
 
 ## Scoring System
 
-**Total: 83 points across 29 functions**
-
 **Point System:**
 - Functions are weighted based on complexity and learning objectives
 - Each part focuses on different aspects of linear algebra
@@ -223,32 +203,8 @@ By completing this assignment, students will:
 | 3 | `part3_advanced_problems.py` | 6 functions | 21 |
 
 ## Getting Help
-
-- **Read the docstrings** - Every function has detailed documentation with examples
-- **Check the test output** - Failed tests show exactly what went wrong
-- **Look up concepts** - Part 3 problems may require researching mathematical concepts
-- **Ask questions** - If you're stuck, ask about the mathematical concepts, not just code
-
-## Common Issues
-
-**Import Errors:**
-```bash
-# Make sure NumPy is installed
-pip install numpy
-```
-
-**Test Not Running:**
-```bash
-# Make sure you're in the right directory
-cd ramaz_ml_course_2025/hw1
-python test.py --part 1
-```
-
-**Functions Returning None:**
-```bash
-# Replace 'pass' with your implementation
-def vector_add(v1, v2):
-    pass  # <- Replace this with your code
-```
+- Discuss with your classmates
+- Look things up online or in the textbool
+- Send me an email (though response times may be a little bit long)
 
 Good luck!
