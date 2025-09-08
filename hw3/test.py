@@ -5,7 +5,7 @@ Test interface for HW3: Linear and Logistic Regression from Scratch
 Usage:
     python test.py                          # Run all tests
     python test.py --part utilities         # Test only utilities.py
-    python test.py --part linear           # Test only linear_regression.py  
+    python test.py --part linear           # Test only linear_regression.py
     python test.py --part logistic         # Test only logistic_regression.py
     python test.py --file utilities_solution  # Test reference implementation
     python test.py standardize_features sigmoid linear_gradient  # Test specific functions

@@ -5,7 +5,7 @@ Test interface for HW1: Linear Algebra Assignment
 Usage:
     python test.py                                    # Run all tests for all parts
     python test.py --part 1                          # Run tests for Part 1 only
-    python test.py --part 2                          # Run tests for Part 2 only  
+    python test.py --part 2                          # Run tests for Part 2 only
     python test.py --part 3                          # Run tests for Part 3 only
     python test.py --file part1_from_scratch         # Test specific file for all parts
     python test.py --part 1 --file part1_solution    # Test specific file for Part 1

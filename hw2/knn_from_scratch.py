@@ -200,7 +200,7 @@ def majority_vote(labels: List[Any]) -> Any:  # [EASY] - 2 points
 
 
 def weighted_majority_vote(
-    neighbors: List[Tuple[List[float], Any, float]]
+    neighbors: List[Tuple[List[float], Any, float]],
 ) -> Any:  # [MEDIUM] - 3 points
     """
     Determine the most common label using distance-weighted voting.
@@ -286,7 +286,7 @@ def mean_prediction(values: List[float]) -> float:  # [EASY] - 2 points
 
 
 def weighted_mean_prediction(
-    neighbors: List[Tuple[List[float], float, float]]
+    neighbors: List[Tuple[List[float], float, float]],
 ) -> float:  # [MEDIUM] - 3 points
     """
     Calculate distance-weighted mean for regression prediction.

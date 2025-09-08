@@ -4,7 +4,7 @@ Test interface for HW2: K-Nearest Neighbors from Scratch
 
 Usage:
     python test_simple.py                         # Run all tests on knn_from_scratch.py
-    python test_simple.py --file reference_solution # Test reference implementation 
+    python test_simple.py --file reference_solution # Test reference implementation
     python test_simple.py func1 func2             # Run specific functions
     python test_simple.py --file reference_solution func1 func2  # Test specific functions in specific file
 """

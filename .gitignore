@@ -1,6 +1,7 @@
 # Test input configuration files (instructor-only)
 # These define what to test but aren't needed by students
 *solution.py
+*solution.ipynb
 *generate_tests.py
 *test_inputs.py
 test_inputs.py

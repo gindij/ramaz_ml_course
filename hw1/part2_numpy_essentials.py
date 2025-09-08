@@ -12,7 +12,7 @@ Instructions:
 
 To test your implementations:
     python test.py --part 2
-    
+
 Difficulty Legend: [EASY] (1 pt) | [MEDIUM] (2 pts) | [HARD] (3 pts)
 """
 
